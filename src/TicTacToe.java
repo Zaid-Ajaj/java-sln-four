@@ -1,6 +1,11 @@
 import java.util.*;
 import java.lang.*;
 
+/** The game logic 
+ * 
+ * @author Zaid Ajaj - s4807561
+ * @author Luna-Elise Schernthaner - s4703928 
+ */
 public class TicTacToe
 {
     private final IPlayer playerOne; 

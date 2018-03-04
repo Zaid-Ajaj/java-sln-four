@@ -1,6 +1,11 @@
 import java.util.*;
 import java.lang.*;
 
+/** The user interface for tic-tac-toe 
+ * 
+ * @author Zaid Ajaj - s4807561
+ * @author Luna-Elise Schernthaner - s4703928 
+ */
 public class UI 
 {
     private TicTacToe game;
@@ -21,8 +26,8 @@ public class UI
 
     public UI()
     {
-        IPlayer player1 = new HumanPlayer(BoardField.Circle, "Zaid");
-        IPlayer player2 = new HumanPlayer(BoardField.Cross, "Luna");
+        IPlayer player1 = new HumanPlayer(BoardField.Circle, "Luna");
+        IPlayer player2 = new ComputerPlayer(BoardField.Cross, "Bob");
         scanner = new Scanner(System.in);
         this.game = new TicTacToe(player1, player2);
     }
@@ -43,8 +48,8 @@ public class UI
 
             if (currentPlayer.isHuman())
             {
-                int moveX = Integer.parseInt(readUserInput("Row nr: "));
-                int moveY = Integer.parseInt(readUserInput("Col nr: "));
+                int moveX = Integer.parseInt(readUserInput("Row Nr: "));
+                int moveY = Integer.parseInt(readUserInput("Col Nr: "));
                 game.makeMove(moveX, moveY);
             }
             else
@@ -66,7 +71,8 @@ public class UI
         {
             IPlayer player = playerWon.get();
             String playerName = player.getName();
-            System.out.println(playerName + " has won the game.");
+            System.out.println(playerName + " has won the game:");
+            writeLn("\n" + game.toString() + "\n");
         }
     }
 }

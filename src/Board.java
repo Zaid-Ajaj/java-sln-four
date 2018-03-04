@@ -1,6 +1,11 @@
 import java.util.*;
 import java.lang.*;
 
+/** The logic of the board 
+ * 
+ * @author Zaid Ajaj - s4807561
+ * @author Luna-Elise Schernthaner - s4703928 
+ */
 public class Board
 {
     private BoardField[][] fields;
@@ -209,11 +214,14 @@ public class Board
             return " ";
     }
 
+    public boolean isEmpty(int x, int y)
+    {
+        return this.fields[x][y] == BoardField.Empty;
+    }
+
     @Override
     public String toString() 
     {
-        StringBuilder builder = new StringBuilder();
-
         ArrayList<String> rows = new ArrayList();
         for (int x = 0; x < 3; x++)
         {
@@ -223,16 +231,9 @@ public class Board
                 elements.add(printField(fields[x][y]));
             }
 
-            String[] elementsArray = new String[3];
-            elementsArray = elements.toArray(elementsArray);
-
-            String row = String.join(" | ", elementsArray);
+            String row = String.join(" | ", elements.toArray(new String[3]));
             rows.add(row);
         }    
-
-        String[] rowsArray = new String[3];
-        rowsArray = rows.toArray(rowsArray);
-
-        return String.join("\n----------\n", rowsArray);
+        return String.join("\n----------\n", rows.toArray(new String[3]));
     }
 }

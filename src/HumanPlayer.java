@@ -1,5 +1,10 @@
 import java.util.Optional;
 
+/** The logic of the human player 
+ * 
+ * @author Zaid Ajaj - s4807561
+ * @author Luna-Elise Schernthaner - s4703928 
+ */
 public class HumanPlayer implements IPlayer
 {
     private BoardField boardField;
